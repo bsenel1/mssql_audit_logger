@@ -1,0 +1,11 @@
+services:
+  mssql-audit-logger:
+    build: .
+    container_name: mssql-audit-logger
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config.toml:/app/config.toml:ro
+      - ./offsets:/app/offsets
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

@@ -1,0 +1,15 @@
+[central_mssql]
+connection_string = "jdbc:sqlserver://MSSQL_HOST:MSSQL_PORT;user=MSSQL_USER;password=MSSQL_PASSWORD;TrustServerCertificate=true;"
+
+[postgres]
+db_url = "postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_HOST:POSTGRES_PORT/POSTGRES_DB"
+
+[collector]
+poll_interval_secs = 5
+sincedb_dir = "/app/offsets"
+
+[[sources]]
+cluster_name = "cluster-name"
+server_name = "mssql-server-name"
+server_ip = "server-ip-address"
+audit_file_path = "/path/visible/to/mssql/*.sqlaudit"
